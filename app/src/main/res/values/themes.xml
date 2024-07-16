@@ -6,4 +6,7 @@
     </style>
 
     <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
+    <style name="Toolbar.Style" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="background">@color/colorPrimary</item>
+    </style>
 </resources>
