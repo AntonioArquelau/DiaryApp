@@ -7,4 +7,9 @@
     <string name="delete_diary">delete</string>
     <string name="diary_recycler_date">diary date</string>
     <string name="diary_recycler_title_text_view">diary title</string>
+    <string name="name">Name</string>
+    <string name="current_date">Current date</string>
+    <string name="diary">Write your diary here</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
 </resources>
