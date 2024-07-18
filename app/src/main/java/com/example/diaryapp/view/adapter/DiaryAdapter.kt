@@ -3,33 +3,47 @@ package com.example.diaryapp.view.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.diaryapp.data.Diary
 import com.example.diaryapp.databinding.DiaryRecyclerViewItemBinding
 
-class DiaryAdapter(private var diaryList: MutableList<Diary>):
+class DiaryAdapter(val onClickDiaryInterface: OnClickDiaryInterface):
     RecyclerView.Adapter<DiaryAdapter.DiaryViewHolder>() {
+    private var diaryList: MutableList<Diary> = mutableListOf()
 
-    inner class DiaryViewHolder(itemView: DiaryRecyclerViewItemBinding): RecyclerView.ViewHolder(itemView.root), View.OnClickListener{
+    fun setData(diaryList: MutableList<Diary>){
+        this.diaryList = diaryList
+        notifyDataSetChanged()
+    }
+    inner class DiaryViewHolder(itemView: DiaryRecyclerViewItemBinding): RecyclerView.ViewHolder(itemView.root){
         private lateinit var view: View
         private lateinit var diary: Diary
         var date: TextView
         var title: TextView
+        var deleteimageButton: ImageButton
+
         init {
             view = itemView.root
-            view.setOnClickListener(this)
             date = itemView.diaryDateTextview
             title = itemView.titleTextview
-        }
-        override fun onClick(v: View?) {
-            TODO("Not yet implemented")
+            deleteimageButton = itemView.deleteImageButton
         }
 
         fun bind(diary: Diary){
             this.diary = diary
             date.text = diary.date
             title.text = diary.title
+
+            view.setOnClickListener{
+                onClickDiaryInterface.onClick(diary)
+            }
+
+            deleteimageButton.setOnClickListener{
+                onClickDiaryInterface.onClickDelete(diary.id)
+            }
+
         }
 
     }

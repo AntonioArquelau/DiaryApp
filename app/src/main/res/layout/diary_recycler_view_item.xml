@@ -31,4 +31,14 @@
         android:textSize="18sp"
         android:text="diary date"/>
 
+    <ImageButton
+        android:id="@+id/delete_image_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="18dp"
+        android:src="@drawable/ic_delete"
+        android:background="@null"
+        app:tint="@color/colorPrimary" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,6 +28,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/current_date_textview">
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name_input_text_value"
             android:layout_width="match_parent"
             android:imeOptions="actionDone"
             android:hint="@string/diary_hint"
@@ -46,6 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/name_input_text">
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/diary_date_textview_value"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:hint="@string/diary"
